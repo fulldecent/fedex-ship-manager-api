@@ -4,7 +4,9 @@ FedEx has two simple web API endpoints which you can use to print shipping label
 
 To our knowledge, this API is secret, and the document you are reading is the only place which explains it. We have set this up in our producting shipping environment and have been using it without change for 5+ years. It was as simple to setup as [DYMO® Label Framework](http://developers.dymo.com/2010/06/02/dymo-label-framework-javascript-library-samples-print-a-label/), which we also use in fulfillment.
 
-## ![demo](/Users/williamentriken/Desktop/fedex-ship-manager-api/demo.png)Feature overview
+![demo](demo.png)
+
+## Feature overview
 
 |                                                 | Ship Manager® API<br />(this document) | FedEx Web Services<br />standard services | FedEx Web Services<br />advanced services |
 | ----------------------------------------------- | -------------------------------------- | ----------------------------------------- | ----------------------------------------- |
