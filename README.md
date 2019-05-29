@@ -32,13 +32,13 @@ To our knowledge, this API is secret, and the document you are reading is the on
 
 You must call the login endpoint first before creating shipments.
 
-Read the [logon endpoint documentation](logon-documentation.md) or try the [logon endpoint live example](logon-example.html).
+Read the [logon endpoint documentation](logon-documentation.md) or try the [logon endpoint live example](https://fulldecent.github.io/fedex-ship-manager-api/logon-example.html).
 
 ### `POST https://www.fedex.com/shipping/shipAction.handle?method=doContinue`
 
 You will call the ship endpoint to create each shipment.
 
-Read the [ship endpoint documentation](ship-documentation.md) or try the [ship endpoint live example](ship-example.html).
+Read the [ship endpoint documentation](ship-documentation.md) or try the [ship endpoint live example](https://fulldecent.github.io/fedex-ship-manager-api/ship-example.html).
 
 ## Project scope
 
