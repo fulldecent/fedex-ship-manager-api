@@ -1,0 +1,1281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>FedEx Ship Manager® API Example</title>
+  </head>
+  <body class="container my-5 lead">
+    <h1>FedEx Ship Manager® API &mdash; Ship Example</h1>
+    <p class="mb-5">Endpoint: <code>POST https://www.fedex.com/shipping/shipAction.handle?method=doContinue</code></p>
+
+    <form method="post" action="https://www.fedex.com/shipping/shipAction.handle?method=doContinue" target="_blank">
+      <h2 class="mt-5">Unknown if required or optional fields</h2>
+
+      <div class="form-group">
+        <label for="password"><code>fromData.moduleStateExpanded</code></label>
+        <input type="text" class="form-control" id="fromData.moduleStateExpanded" name="fromData.moduleStateExpanded" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.moduleJsInitState</code></label>
+        <input type="text" class="form-control" id="fromData.moduleJsInitState" name="fromData.moduleJsInitState" value="lite">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>lite</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.addressData.wabsID</code></label>
+        <input type="text" class="form-control" id="fromData.addressData.wabsID" name="fromData.addressData.wabsID" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.addressData.countryCode</code></label>
+        <input type="text" class="form-control" id="fromData.addressData.countryCode" name="fromData.addressData.countryCode" value="US">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>US</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.addressData.companyName</code></label>
+        <input type="text" class="form-control" id="fromData.addressData.companyName" name="fromData.addressData.companyName" value="Select or enter">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Select or enter</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.addressData.contactName</code></label>
+        <input type="text" class="form-control" id="fromData.addressData.contactName" name="fromData.addressData.contactName" value="Shipper Name">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Shipper Name</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.addressData.addressLine1</code></label>
+        <input type="text" class="form-control" id="fromData.addressData.addressLine1" name="fromData.addressData.addressLine1" value="1234 Shipper Lane">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1234 Shipper Lane</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.addressData.addressLine2</code></label>
+        <input type="text" class="form-control" id="fromData.addressData.addressLine2" name="fromData.addressData.addressLine2" value="Suite 101">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Suite 101</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.addressData.zipPostalCode</code></label>
+        <input type="text" class="form-control" id="fromData.addressData.zipPostalCode" name="fromData.addressData.zipPostalCode" value="19006">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>19006</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.addressData.city</code></label>
+        <input type="text" class="form-control" id="fromData.addressData.city" name="fromData.addressData.city" value="Philadelphia">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Philadelphia</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.addressData.stateProvinceCode</code></label>
+        <input type="text" class="form-control" id="fromData.addressData.stateProvinceCode" name="fromData.addressData.stateProvinceCode" value="PA">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>PA</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.addressData.phoneNumber</code></label>
+        <input type="text" class="form-control" id="fromData.addressData.phoneNumber" name="fromData.addressData.phoneNumber" value="8001234567">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>8001234567</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>fromData.addressData.phoneNumberExt</code></label>
+        <input type="text" class="form-control" id="fromData.addressData.phoneNumberExt" name="fromData.addressData.phoneNumberExt" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toDisplay.deniedPartyURL</code></label>
+        <input type="text" class="form-control" id="toDisplay.deniedPartyURL" name="toDisplay.deniedPartyURL" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.srnNumber</code></label>
+        <input type="text" class="form-control" id="toData.srnNumber" name="toData.srnNumber" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.wabsID</code></label>
+        <input type="text" class="form-control" id="toData.addressData.wabsID" name="toData.addressData.wabsID" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.skipAddressCheck</code></label>
+        <input type="text" class="form-control" id="toData.addressData.skipAddressCheck" name="toData.addressData.skipAddressCheck" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.verified</code></label>
+        <input type="text" class="form-control" id="toData.addressData.verified" name="toData.addressData.verified" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.addressCheckPerformed</code></label>
+        <input type="text" class="form-control" id="toData.addressData.addressCheckPerformed" name="toData.addressData.addressCheckPerformed" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.addressCheckDate</code></label>
+        <input type="text" class="form-control" id="toData.addressData.addressCheckDate" name="toData.addressData.addressCheckDate" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.addressSourceType</code></label>
+        <input type="text" class="form-control" id="toData.addressData.addressSourceType" name="toData.addressData.addressSourceType" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.verifiedByINET</code></label>
+        <input type="text" class="form-control" id="toData.addressData.verifiedByINET" name="toData.addressData.verifiedByINET" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.uspsAddressType</code></label>
+        <input type="text" class="form-control" id="toData.addressData.uspsAddressType" name="toData.addressData.uspsAddressType" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>outlookPath</code></label>
+        <input type="text" class="form-control" id="outlookPath" name="outlookPath" value="https://www.fedex.com/woas/WoasAction.do?&amp;locale=en_us&amp;appContextPath=">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>https://www.fedex.com/woas/WoasAction.do?&amp;locale=en_us&amp;appContextPath=</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>outlookReturnPath</code></label>
+        <input type="text" class="form-control" id="outlookReturnPath" name="outlookReturnPath" value="https://www.fedex.com:443/shipping/jsp/WoasClient.jsp">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>https://www.fedex.com:443/shipping/jsp/WoasClient.jsp</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>origAddressFromWabsAsString</code></label>
+        <input type="text" class="form-control" id="origAddressFromWabsAsString" name="origAddressFromWabsAsString" value="||Select or enter||empty|false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>||Select or enter||empty|false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toAliasCountryCode</code></label>
+        <input type="text" class="form-control" id="toAliasCountryCode" name="toAliasCountryCode" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.countryCode</code></label>
+        <input type="text" class="form-control" id="toData.addressData.countryCode" name="toData.addressData.countryCode" value="US">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>US</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.companyName</code></label>
+        <input type="text" class="form-control" id="toData.addressData.companyName" name="toData.addressData.companyName" value="Select or enter">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Select or enter</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.contactName</code></label>
+        <input type="text" class="form-control" id="toData.addressData.contactName" name="toData.addressData.contactName" value="Receiver Name">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Receiver Name</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.addressLine1</code></label>
+        <input type="text" class="form-control" id="toData.addressData.addressLine1" name="toData.addressData.addressLine1" value="1234 Receiver Lane">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1234 Receiver Lane</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.addressLine2</code></label>
+        <input type="text" class="form-control" id="toData.addressData.addressLine2" name="toData.addressData.addressLine2" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.zipPostalCode</code></label>
+        <input type="text" class="form-control" id="toData.addressData.zipPostalCode" name="toData.addressData.zipPostalCode" value="10453">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>10453</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.city</code></label>
+        <input type="text" class="form-control" id="toData.addressData.city" name="toData.addressData.city" value="New York">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>New York</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.stateProvinceCode</code></label>
+        <input type="text" class="form-control" id="toData.addressData.stateProvinceCode" name="toData.addressData.stateProvinceCode" value="LA">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>LA</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.phoneNumber</code></label>
+        <input type="text" class="form-control" id="toData.addressData.phoneNumber" name="toData.addressData.phoneNumber" value="8002345678">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>8002345678</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toData.addressData.phoneNumberExt</code></label>
+        <input type="text" class="form-control" id="toData.addressData.phoneNumberExt" name="toData.addressData.phoneNumberExt" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>toDisplay.addressCheckRequiredOnPageLoadFlag</code></label>
+        <input type="text" class="form-control" id="toDisplay.addressCheckRequiredOnPageLoadFlag" name="toDisplay.addressCheckRequiredOnPageLoadFlag" value="N">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>N</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.shipDate</code></label>
+        <input type="text" class="form-control" id="psdData.shipDate" name="psdData.shipDate" value="05/29/2019">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>05/29/2019</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.expiryDate</code></label>
+        <input type="text" class="form-control" id="psdData.expiryDate" name="psdData.expiryDate" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.pickupDate</code></label>
+        <input type="text" class="form-control" id="psdData.pickupDate" name="psdData.pickupDate" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.arePackagesIdentical</code></label>
+        <input type="text" class="form-control" id="psdData.arePackagesIdentical" name="psdData.arePackagesIdentical" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>removeRelatedVO</code></label>
+        <input type="text" class="form-control" id="removeRelatedVO" name="removeRelatedVO" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psd_shipDate</code></label>
+        <input type="text" class="form-control" id="psd_shipDate" name="psd_shipDate" value="05/29/2019">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>05/29/2019</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.numberOfPackages</code></label>
+        <input type="text" class="form-control" id="psdData.numberOfPackages" name="psdData.numberOfPackages" value="1">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.mpsRowDataList[0].quantity</code></label>
+        <input type="text" class="form-control" id="psdData.mpsRowDataList[0].quantity" name="psdData.mpsRowDataList[0].quantity" value="1">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.weightUnitOfMeasure</code></label>
+        <input type="text" class="form-control" id="psdData.weightUnitOfMeasure" name="psdData.weightUnitOfMeasure" value="LBS">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>LBS</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.mpsRowCount</code></label>
+        <input type="text" class="form-control" id="psdData.mpsRowCount" name="psdData.mpsRowCount" value="0">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>0</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.mpsMaxRowIndex</code></label>
+        <input type="text" class="form-control" id="psdData.mpsMaxRowIndex" name="psdData.mpsMaxRowIndex" value="0">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>0</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.mpsRowDataList[0].weight</code></label>
+        <input type="text" class="form-control" id="psdData.mpsRowDataList[0].weight" name="psdData.mpsRowDataList[0].weight" value="1">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.weightUnitOfMeasure</code></label>
+        <input type="text" class="form-control" id="psdData.weightUnitOfMeasure" name="psdData.weightUnitOfMeasure" value="LBS">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>LBS</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.mpsRowDataList[0].carriageValue</code></label>
+        <input type="text" class="form-control" id="psdData.mpsRowDataList[0].carriageValue" name="psdData.mpsRowDataList[0].carriageValue" value="1">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.declaredValueCurrencyCode</code></label>
+        <input type="text" class="form-control" id="psdData.declaredValueCurrencyCode" name="psdData.declaredValueCurrencyCode" value="USD">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>USD</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>commodityData.documentDescriptionCode</code></label>
+        <input type="text" class="form-control" id="commodityData.documentDescriptionCode" name="commodityData.documentDescriptionCode" value="empty">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>empty</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>commodityData.descriptionForIntraEU</code></label>
+        <input type="text" class="form-control" id="commodityData.descriptionForIntraEU" name="commodityData.descriptionForIntraEU" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>commodityData.yourDocumentDescription</code></label>
+        <input type="text" class="form-control" id="commodityData.yourDocumentDescription" name="commodityData.yourDocumentDescription" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>commodityData.docShipEligibleForSED</code></label>
+        <input type="text" class="form-control" id="commodityData.docShipEligibleForSED" name="commodityData.docShipEligibleForSED" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>commodityData.productsAsString</code></label>
+        <input type="text" class="form-control" id="commodityData.productsAsString" name="commodityData.productsAsString" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>commodityData.displayReturnAlert</code></label>
+        <input type="text" class="form-control" id="commodityData.displayReturnAlert" name="commodityData.displayReturnAlert" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.serviceType</code></label>
+        <input type="text" class="form-control" id="psdData.serviceType" name="psdData.serviceType" value="FedEx Express Saver">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>FedEx Express Saver</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.packageType</code></label>
+        <input type="text" class="form-control" id="psdData.packageType" name="psdData.packageType" value="FedEx Envelope">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>FedEx Envelope</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.mpsRowDataList[0].mpsDimensionSelect</code></label>
+        <input type="text" class="form-control" id="psdData.mpsRowDataList[0].mpsDimensionSelect" name="psdData.mpsRowDataList[0].mpsDimensionSelect" value="empty">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>empty</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.mpsRowDataList[0].mpsLength</code></label>
+        <input type="text" class="form-control" id="psdData.mpsRowDataList[0].mpsLength" name="psdData.mpsRowDataList[0].mpsLength" value="L">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>L</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.mpsRowDataList[0].mpsWidth</code></label>
+        <input type="text" class="form-control" id="psdData.mpsRowDataList[0].mpsWidth" name="psdData.mpsRowDataList[0].mpsWidth" value="W">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>W</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.mpsRowDataList[0].mpsHeight</code></label>
+        <input type="text" class="form-control" id="psdData.mpsRowDataList[0].mpsHeight" name="psdData.mpsRowDataList[0].mpsHeight" value="H">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>H</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.dimensionUnitOfMeasure</code></label>
+        <input type="text" class="form-control" id="psdData.dimensionUnitOfMeasure" name="psdData.dimensionUnitOfMeasure" value="I">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>I</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.dimensionsProfileName</code></label>
+        <input type="text" class="form-control" id="psdData.dimensionsProfileName" name="psdData.dimensionsProfileName" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.bookingConfirmationNumber</code></label>
+        <input type="text" class="form-control" id="psdData.bookingConfirmationNumber" name="psdData.bookingConfirmationNumber" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.shipmentWillBeReadyByHH</code></label>
+        <input type="text" class="form-control" id="psdData.shipmentWillBeReadyByHH" name="psdData.shipmentWillBeReadyByHH" value="1">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.shipmentWillBeReadyByMM</code></label>
+        <input type="text" class="form-control" id="psdData.shipmentWillBeReadyByMM" name="psdData.shipmentWillBeReadyByMM" value="00">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>00</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.shipmentWillBeReadyByAMPM</code></label>
+        <input type="text" class="form-control" id="psdData.shipmentWillBeReadyByAMPM" name="psdData.shipmentWillBeReadyByAMPM" value="AM">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>AM</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.reasonForReturn</code></label>
+        <input type="text" class="form-control" id="psdData.reasonForReturn" name="psdData.reasonForReturn" value="empty">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>empty</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.specifyReason</code></label>
+        <input type="text" class="form-control" id="psdData.specifyReason" name="psdData.specifyReason" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>billingData.selectedBillTransportationIndex</code></label>
+        <input type="text" class="form-control" id="billingData.selectedBillTransportationIndex" name="billingData.selectedBillTransportationIndex" value="1">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>billingData.referenceData.yourReference</code></label>
+        <input type="text" class="form-control" id="billingData.referenceData.yourReference" name="billingData.referenceData.yourReference" value="ref12345">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>ref12345</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>billingData.selectedReferenceType</code></label>
+        <input type="text" class="form-control" id="billingData.selectedReferenceType" name="billingData.selectedReferenceType" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>billingData.referenceData.purchaseOrderNumber</code></label>
+        <input type="text" class="form-control" id="billingData.referenceData.purchaseOrderNumber" name="billingData.referenceData.purchaseOrderNumber" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>billingData.referenceData.invoiceNumber</code></label>
+        <input type="text" class="form-control" id="billingData.referenceData.invoiceNumber" name="billingData.referenceData.invoiceNumber" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>billingData.referenceData.departmentNumber</code></label>
+        <input type="text" class="form-control" id="billingData.referenceData.departmentNumber" name="billingData.referenceData.departmentNumber" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.moduleJsInitState</code></label>
+        <input type="text" class="form-control" id="ssData.moduleJsInitState" name="ssData.moduleJsInitState" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.moduleStateExpanded</code></label>
+        <input type="text" class="form-control" id="ssData.moduleStateExpanded" name="ssData.moduleStateExpanded" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.diaData.addressData.wabsID</code></label>
+        <input type="text" class="form-control" id="ssData.diaData.addressData.wabsID" name="ssData.diaData.addressData.wabsID" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.codData.addressData.wabsID</code></label>
+        <input type="text" class="form-control" id="ssData.codData.addressData.wabsID" name="ssData.codData.addressData.wabsID" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.deliveryDate</code></label>
+        <input type="text" class="form-control" id="ssData.deliveryDate" name="ssData.deliveryDate" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.halData.addressData.addressLine1</code></label>
+        <input type="text" class="form-control" id="ssData.halData.addressData.addressLine1" name="ssData.halData.addressData.addressLine1" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.halData.addressData.addressLine2</code></label>
+        <input type="text" class="form-control" id="ssData.halData.addressData.addressLine2" name="ssData.halData.addressData.addressLine2" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.halData.addressData.zipPostalCode</code></label>
+        <input type="text" class="form-control" id="ssData.halData.addressData.zipPostalCode" name="ssData.halData.addressData.zipPostalCode" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.halData.addressData.city</code></label>
+        <input type="text" class="form-control" id="ssData.halData.addressData.city" name="ssData.halData.addressData.city" value="Select or enter">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Select or enter</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.diaData.addressData.countryCode</code></label>
+        <input type="text" class="form-control" id="ssData.diaData.addressData.countryCode" name="ssData.diaData.addressData.countryCode" value="US">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>US</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.diaData.addressData.companyName</code></label>
+        <input type="text" class="form-control" id="ssData.diaData.addressData.companyName" name="ssData.diaData.addressData.companyName" value="Select or enter">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Select or enter</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.diaData.addressData.contactName</code></label>
+        <input type="text" class="form-control" id="ssData.diaData.addressData.contactName" name="ssData.diaData.addressData.contactName" value="Select or enter">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Select or enter</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.diaData.addressData.addressLine1</code></label>
+        <input type="text" class="form-control" id="ssData.diaData.addressData.addressLine1" name="ssData.diaData.addressData.addressLine1" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.diaData.addressData.addressLine2</code></label>
+        <input type="text" class="form-control" id="ssData.diaData.addressData.addressLine2" name="ssData.diaData.addressData.addressLine2" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.diaData.addressData.zipPostalCode</code></label>
+        <input type="text" class="form-control" id="ssData.diaData.addressData.zipPostalCode" name="ssData.diaData.addressData.zipPostalCode" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.diaData.addressData.city</code></label>
+        <input type="text" class="form-control" id="ssData.diaData.addressData.city" name="ssData.diaData.addressData.city" value="Select or enter">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Select or enter</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.diaData.addressData.phoneNumber</code></label>
+        <input type="text" class="form-control" id="ssData.diaData.addressData.phoneNumber" name="ssData.diaData.addressData.phoneNumber" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.diaData.addressData.phoneNumberExt</code></label>
+        <input type="text" class="form-control" id="ssData.diaData.addressData.phoneNumberExt" name="ssData.diaData.addressData.phoneNumberExt" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>psdData.mpsRowDataList[0].dryIceWeight</code></label>
+        <input type="text" class="form-control" id="psdData.mpsRowDataList[0].dryIceWeight" name="psdData.mpsRowDataList[0].dryIceWeight" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.itarExemptionNumber</code></label>
+        <input type="text" class="form-control" id="ssData.itarExemptionNumber" name="ssData.itarExemptionNumber" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.signatureType</code></label>
+        <input type="text" class="form-control" id="ssData.signatureType" name="ssData.signatureType" value="0">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>0</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.isUserChosenSignature</code></label>
+        <input type="text" class="form-control" id="ssData.isUserChosenSignature" name="ssData.isUserChosenSignature" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>ssData.codDiaServiceType</code></label>
+        <input type="text" class="form-control" id="ssData.codDiaServiceType" name="ssData.codDiaServiceType" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.pickupTypeCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.pickupTypeCode" name="pickupDropoffData.pickupTypeCode" value="3">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>3</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.moduleState</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.moduleState" name="pickupDropoffData.moduleState" value="C">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>C</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.moduleRequiredOrOptional</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.moduleRequiredOrOptional" name="pickupDropoffData.moduleRequiredOrOptional" value="O">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>O</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accountAddressFlag</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accountAddressFlag" name="pickupDropoffData.accountAddressFlag" value="ALA">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>ALA</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.displayAlert</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.displayAlert" name="pickupDropoffData.displayAlert" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.carrierCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.carrierCode" name="pickupDropoffData.carrierCode" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.locationCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.locationCode" name="pickupDropoffData.locationCode" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.confirmatioNumberPickupDate</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.confirmatioNumberPickupDate" name="pickupDropoffData.confirmatioNumberPickupDate" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accAddrLinkDisplayStatus</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accAddrLinkDisplayStatus" name="pickupDropoffData.accAddrLinkDisplayStatus" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.contactName</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.contactName" name="pickupDropoffData.alternativeAddressData.contactName" value="Shipper Name">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Shipper Name</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.companyName</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.companyName" name="pickupDropoffData.alternativeAddressData.companyName" value="Shipper Company">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Shipper Company</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.city</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.city" name="pickupDropoffData.alternativeAddressData.city" value="Philadelphia">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Philadelphia</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.pickupDate</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.pickupDate" name="pickupDropoffData.pickupDate" value="05/29/2019">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>05/29/2019</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.sdocType</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.sdocType" name="pickupDropoffData.sdocType" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.isSDOCResidentialAllowed</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.isSDOCResidentialAllowed" name="pickupDropoffData.isSDOCResidentialAllowed" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.pickupTypeCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.pickupTypeCode" name="pickupDropoffData.pickupTypeCode" value="3">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>3</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.confirmationNumber</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.confirmationNumber" name="pickupDropoffData.confirmationNumber" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accountAddressData.countryCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accountAddressData.countryCode" name="pickupDropoffData.accountAddressData.countryCode" value="US">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>US</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.countryCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.countryCode" name="pickupDropoffData.alternativeAddressData.countryCode" value="US">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>US</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accCountryName</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accCountryName" name="pickupDropoffData.accCountryName" value="United States">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>United States</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.altCountryName</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.altCountryName" name="pickupDropoffData.altCountryName" value="United States">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>United States</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accountAddressData.companyName</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accountAddressData.companyName" name="pickupDropoffData.accountAddressData.companyName" value="Shipper Company">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Shipper Company</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.companyName</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.companyName" name="pickupDropoffData.alternativeAddressData.companyName" value="Shipper Company">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Shipper Company</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.contactID</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.contactID" name="pickupDropoffData.alternativeAddressData.contactID" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accountAddressData.contactName</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accountAddressData.contactName" name="pickupDropoffData.accountAddressData.contactName" value="Shipper Name">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Shipper Name</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.contactName</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.contactName" name="pickupDropoffData.alternativeAddressData.contactName" value="Shipper Name">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Shipper Name</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accountAddressData.addressLine1</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accountAddressData.addressLine1" name="pickupDropoffData.accountAddressData.addressLine1" value="1234 Shipper Lane">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1234 Shipper Lane</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.addressLine1</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.addressLine1" name="pickupDropoffData.alternativeAddressData.addressLine1" value="1234 Shipper Lane">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1234 Shipper Lane</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accountAddressData.addressLine2</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accountAddressData.addressLine2" name="pickupDropoffData.accountAddressData.addressLine2" value="Suite 101">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Suite 101</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.addressLine2</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.addressLine2" name="pickupDropoffData.alternativeAddressData.addressLine2" value="Suite 101">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Suite 101</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accountAddressData.zipPostalCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accountAddressData.zipPostalCode" name="pickupDropoffData.accountAddressData.zipPostalCode" value="19006">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>19006</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.zipPostalCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.zipPostalCode" name="pickupDropoffData.alternativeAddressData.zipPostalCode" value="19006">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>19006</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accountAddressData.city</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accountAddressData.city" name="pickupDropoffData.accountAddressData.city" value="Philadelphia">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Philadelphia</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.city</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.city" name="pickupDropoffData.alternativeAddressData.city" value="Philadelphia">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>Philadelphia</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accountAddressData.stateProvinceCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accountAddressData.stateProvinceCode" name="pickupDropoffData.accountAddressData.stateProvinceCode" value="PA">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>PA</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accStateName</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accStateName" name="pickupDropoffData.accStateName" value="PA">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>PA</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.stateProvinceCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.stateProvinceCode" name="pickupDropoffData.alternativeAddressData.stateProvinceCode" value="PA">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>PA</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.stateProvinceCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.stateProvinceCode" name="pickupDropoffData.alternativeAddressData.stateProvinceCode" value="PA">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>PA</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accountAddressData.phoneNumber</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accountAddressData.phoneNumber" name="pickupDropoffData.accountAddressData.phoneNumber" value="8001234567">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>8001234567</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.accountAddressData.phoneNumberExt</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.accountAddressData.phoneNumberExt" name="pickupDropoffData.accountAddressData.phoneNumberExt" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.phoneNumber</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.phoneNumber" name="pickupDropoffData.alternativeAddressData.phoneNumber" value="8001234567">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>8001234567</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.phoneNumberExt</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.phoneNumberExt" name="pickupDropoffData.alternativeAddressData.phoneNumberExt" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.alternativeAddressData.residential</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.alternativeAddressData.residential" name="pickupDropoffData.alternativeAddressData.residential" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.serviceCode</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.serviceCode" name="pickupDropoffData.serviceCode" value="FedEx Express">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>FedEx Express</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.numberOfPieces</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.numberOfPieces" name="pickupDropoffData.numberOfPieces" value="1">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.totalWeight</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.totalWeight" name="pickupDropoffData.totalWeight" value="0">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>0</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.weightUnit</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.weightUnit" name="pickupDropoffData.weightUnit" value="LBS">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>LBS</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.formattedPickupDate</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.formattedPickupDate" name="pickupDropoffData.formattedPickupDate" value="05/29/2019">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>05/29/2019</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pdm_pickupDate</code></label>
+        <input type="text" class="form-control" id="pdm_pickupDate" name="pdm_pickupDate" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.packageReadyTime</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.packageReadyTime" name="pickupDropoffData.packageReadyTime" value="1200">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1200</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.companyCloseTime</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.companyCloseTime" name="pickupDropoffData.companyCloseTime" value="1800">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1800</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.personWithSkidNumber</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.personWithSkidNumber" name="pickupDropoffData.personWithSkidNumber" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.packageLocationOrInstructions</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.packageLocationOrInstructions" name="pickupDropoffData.packageLocationOrInstructions" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.dimProfile</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.dimProfile" name="pickupDropoffData.dimProfile" value="empty">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>empty</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.dimLength</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.dimLength" name="pickupDropoffData.dimLength" value="L">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>L</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.dimWidth</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.dimWidth" name="pickupDropoffData.dimWidth" value="W">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>W</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.dimHeight</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.dimHeight" name="pickupDropoffData.dimHeight" value="H">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>H</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.dimUnit</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.dimUnit" name="pickupDropoffData.dimUnit" value="I">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>I</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.truckType</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.truckType" name="pickupDropoffData.truckType" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>pickupDropoffData.truckSize</code></label>
+        <input type="text" class="form-control" id="pickupDropoffData.truckSize" name="pickupDropoffData.truckSize" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.senderNotifications.email</code></label>
+        <input type="text" class="form-control" id="notificationData.senderNotifications.email" name="notificationData.senderNotifications.email" value="shipper@example.com">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>shipper@example.com</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.senderNotifications.notificationLanguage</code></label>
+        <input type="text" class="form-control" id="notificationData.senderNotifications.notificationLanguage" name="notificationData.senderNotifications.notificationLanguage" value="en">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>en</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.senderNotifications.shipmentNotificationFlag</code></label>
+        <input type="text" class="form-control" id="notificationData.senderNotifications.shipmentNotificationFlag" name="notificationData.senderNotifications.shipmentNotificationFlag" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.senderNotifications.tenderedNotificationFlag</code></label>
+        <input type="text" class="form-control" id="notificationData.senderNotifications.tenderedNotificationFlag" name="notificationData.senderNotifications.tenderedNotificationFlag" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.senderNotifications.exceptionNotificationFlag</code></label>
+        <input type="text" class="form-control" id="notificationData.senderNotifications.exceptionNotificationFlag" name="notificationData.senderNotifications.exceptionNotificationFlag" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.senderNotifications.deliveryNotificationFlag</code></label>
+        <input type="text" class="form-control" id="notificationData.senderNotifications.deliveryNotificationFlag" name="notificationData.senderNotifications.deliveryNotificationFlag" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.recipientNotifications.email</code></label>
+        <input type="text" class="form-control" id="notificationData.recipientNotifications.email" name="notificationData.recipientNotifications.email" value="receiver@example.com">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>receiver@example.com</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.recipientNotifications.notificationLanguage</code></label>
+        <input type="text" class="form-control" id="notificationData.recipientNotifications.notificationLanguage" name="notificationData.recipientNotifications.notificationLanguage" value="en">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>en</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.recipientNotifications.shipmentNotificationFlag</code></label>
+        <input type="text" class="form-control" id="notificationData.recipientNotifications.shipmentNotificationFlag" name="notificationData.recipientNotifications.shipmentNotificationFlag" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.recipientNotifications.tenderedNotificationFlag</code></label>
+        <input type="text" class="form-control" id="notificationData.recipientNotifications.tenderedNotificationFlag" name="notificationData.recipientNotifications.tenderedNotificationFlag" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.recipientNotifications.exceptionNotificationFlag</code></label>
+        <input type="text" class="form-control" id="notificationData.recipientNotifications.exceptionNotificationFlag" name="notificationData.recipientNotifications.exceptionNotificationFlag" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.recipientNotifications.deliveryNotificationFlag</code></label>
+        <input type="text" class="form-control" id="notificationData.recipientNotifications.deliveryNotificationFlag" name="notificationData.recipientNotifications.deliveryNotificationFlag" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.other1Notifications.email</code></label>
+        <input type="text" class="form-control" id="notificationData.other1Notifications.email" name="notificationData.other1Notifications.email" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.other1Notifications.notificationLanguage</code></label>
+        <input type="text" class="form-control" id="notificationData.other1Notifications.notificationLanguage" name="notificationData.other1Notifications.notificationLanguage" value="en">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>en</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.other2Notifications.email</code></label>
+        <input type="text" class="form-control" id="notificationData.other2Notifications.email" name="notificationData.other2Notifications.email" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.other2Notifications.notificationLanguage</code></label>
+        <input type="text" class="form-control" id="notificationData.other2Notifications.notificationLanguage" name="notificationData.other2Notifications.notificationLanguage" value="en">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>en</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.formatType</code></label>
+        <input type="text" class="form-control" id="notificationData.formatType" name="notificationData.formatType" value="H">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>H</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>notificationData.emailMessage</code></label>
+        <input type="text" class="form-control" id="notificationData.emailMessage" name="notificationData.emailMessage" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.proscribedCountry</code></label>
+        <input type="text" class="form-control" id="completeShipData.proscribedCountry" name="completeShipData.proscribedCountry" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.fromEU</code></label>
+        <input type="text" class="form-control" id="completeShipData.fromEU" name="completeShipData.fromEU" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.toEU</code></label>
+        <input type="text" class="form-control" id="completeShipData.toEU" name="completeShipData.toEU" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.dynamicModuleNumber</code></label>
+        <input type="text" class="form-control" id="completeShipData.dynamicModuleNumber" name="completeShipData.dynamicModuleNumber" value="1,6">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>1,6</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.products</code></label>
+        <input type="text" class="form-control" id="completeShipData.products" name="completeShipData.products" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.createShipProfileEnabled</code></label>
+        <input type="text" class="form-control" id="completeShipData.createShipProfileEnabled" name="completeShipData.createShipProfileEnabled" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.saveShipProfileEnabled</code></label>
+        <input type="text" class="form-control" id="completeShipData.saveShipProfileEnabled" name="completeShipData.saveShipProfileEnabled" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.saveShipProfileAsNewEnabled</code></label>
+        <input type="text" class="form-control" id="completeShipData.saveShipProfileAsNewEnabled" name="completeShipData.saveShipProfileAsNewEnabled" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.saveForLaterShowed</code></label>
+        <input type="text" class="form-control" id="completeShipData.saveForLaterShowed" name="completeShipData.saveForLaterShowed" value="true">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>true</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.saveForLaterClicked</code></label>
+        <input type="text" class="form-control" id="completeShipData.saveForLaterClicked" name="completeShipData.saveForLaterClicked" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.pendingId</code></label>
+        <input type="text" class="form-control" id="completeShipData.pendingId" name="completeShipData.pendingId" value="0">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>0</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.profileId</code></label>
+        <input type="text" class="form-control" id="completeShipData.profileId" name="completeShipData.profileId" value="0">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>0</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.shipFromPendingShipment</code></label>
+        <input type="text" class="form-control" id="completeShipData.shipFromPendingShipment" name="completeShipData.shipFromPendingShipment" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.shipFromShipmentProfile</code></label>
+        <input type="text" class="form-control" id="completeShipData.shipFromShipmentProfile" name="completeShipData.shipFromShipmentProfile" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.shipmentStatus</code></label>
+        <input type="text" class="form-control" id="completeShipData.shipmentStatus" name="completeShipData.shipmentStatus" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.reviewShipmentProfilesFlg</code></label>
+        <input type="text" class="form-control" id="completeShipData.reviewShipmentProfilesFlg" name="completeShipData.reviewShipmentProfilesFlg" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.reviewPaginationInfo</code></label>
+        <input type="text" class="form-control" id="completeShipData.reviewPaginationInfo" name="completeShipData.reviewPaginationInfo" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.hasNextProfile</code></label>
+        <input type="text" class="form-control" id="completeShipData.hasNextProfile" name="completeShipData.hasNextProfile" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.hasPreviousProfile</code></label>
+        <input type="text" class="form-control" id="completeShipData.hasPreviousProfile" name="completeShipData.hasPreviousProfile" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.reviewEvent</code></label>
+        <input type="text" class="form-control" id="completeShipData.reviewEvent" name="completeShipData.reviewEvent" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.docShipEligibleForEEISED</code></label>
+        <input type="text" class="form-control" id="completeShipData.docShipEligibleForEEISED" name="completeShipData.docShipEligibleForEEISED" value="false">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>false</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.dbFull</code></label>
+        <input type="text" class="form-control" id="completeShipData.dbFull" name="completeShipData.dbFull" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.nickNameDuplicateFlg</code></label>
+        <input type="text" class="form-control" id="completeShipData.nickNameDuplicateFlg" name="completeShipData.nickNameDuplicateFlg" value="N">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>N</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>returnsTandCFlag</code></label>
+        <input type="text" class="form-control" id="returnsTandCFlag" name="returnsTandCFlag" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>orderData.externalOrderId</code></label>
+        <input type="text" class="form-control" id="orderData.externalOrderId" name="orderData.externalOrderId" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>orderData.middlewareVersion</code></label>
+        <input type="text" class="form-control" id="orderData.middlewareVersion" name="orderData.middlewareVersion" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>orderData.originatingSystem</code></label>
+        <input type="text" class="form-control" id="orderData.originatingSystem" name="orderData.originatingSystem" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.profileNickName</code></label>
+        <input type="text" class="form-control" id="completeShipData.profileNickName" name="completeShipData.profileNickName" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>completeShipData.mobileShipmentEmailAddress</code></label>
+        <input type="text" class="form-control" id="completeShipData.mobileShipmentEmailAddress" name="completeShipData.mobileShipmentEmailAddress" value="">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code></code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>utype</code></label>
+        <input type="text" class="form-control" id="utype" name="utype" value="null">
+        <small class="form-text text-muted">TODO: add documentation</small>
+        <small class="form-text text-muted">Example value: <code>null</code></small>
+      </div>
+
+      <h2 class="mt-5">Action</h2>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </body>
+</html>

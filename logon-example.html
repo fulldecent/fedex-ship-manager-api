@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>FedEx Ship Manager® API Example</title>
+  </head>
+  <body class="container my-5 lead">
+    <h1>FedEx Ship Manager® API &mdash; Login Example</h1>
+    <p class="mb-5">Endpoint: <code>POST https://www.fedex.com/fcl/logon.do</code></p>
+
+    <form target="_blank" action="https://www.fedex.com/fcl/logon.do" method="post">
+      <h2 class="mt-5">Required fields</h2>
+      <div class="form-group">
+        <label for="username"><code>username</code></label>
+        <input type="text" class="form-control" id="username" name="username">
+        <small class="form-text text-muted">FedEx account username</small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>password</code></label>
+        <input type="text" class="form-control" id="password" name="password">
+        <small class="form-text text-muted">FedEx account password</small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>appName</code></label>
+        <input type="text" class="form-control" id="appName" name="appName" value="fclfsm">
+        <small class="form-text text-muted">The application to login to, only one value is permissible</small>
+        <small class="form-text text-muted">Example value: <code>fclfsm</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>locale</code></label>
+        <input type="text" class="form-control" id="locale" name="locale" value="us_en">
+        <small class="form-text text-muted">Website locale</small>
+        <small class="form-text text-muted">Example value: <code>us_en</code></small>
+      </div>
+      <div class="form-group">
+        <label for="password"><code>afterwardsURL</code></label>
+        <input type="text" class="form-control" id="afterwardsURL" name="afterwardsURL" value="https://www.fedex.com/shipping/shipEntryAction.do?method=doEntry&link=1&locale=en_US&urlparams=us&sType=F">
+        <small class="form-text text-muted">Redirect URL after successful login, this will allow any URL and is probably a security vulnerability</small>
+        <small class="form-text text-muted">Example value: <code>https://www.fedex.com/shipping/shipEntryAction.do?method=doEntry&link=1&locale=en_US&urlparams=us&sType=F</code></small>
+      </div>
+
+      <h2 class="mt-5">Optional fields</h2>
+      <div class="form-group">
+        <label for="cc_lang"><code>cc_lang</code></label>
+        <input type="text" class="form-control" id="cc_lang" name="cc_lang" value="us">
+        <small class="form-text text-muted">Website language</small>
+        <small class="form-text text-muted">Example value: <code>us</code></small>
+      </div>
+      <div class="form-group">
+        <label for="registrationType"><code>registrationType</code></label>
+        <input type="text" class="form-control" id="registrationType" name="registrationType" value="logon">
+        <small class="form-text text-muted">Action type, does not appear to be used in any way</small>
+        <small class="form-text text-muted">Example value: <code>logon</code></small>
+      </div>
+      <div class="form-group">
+        <label for="ssoguest"><code>ssoguest</code></label>
+        <input type="text" class="form-control" id="ssoguest" name="ssoguest" value="n">
+        <small class="form-text text-muted">Integration with single sign-on</small>
+        <small class="form-text text-muted">Example value: <code>n</code></small>
+      </div>
+      <div class="form-group">
+        <label for="login"><code>login</code></label>
+        <input type="text" class="form-control" id="login" name="login" value="Login">
+        <small class="form-text text-muted">Action type, does not appear to be used in any way</small>
+        <small class="form-text text-muted">Example value: <code>Login</code></small>
+      </div>
+
+      <h2 class="mt-5">Action</h2>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </body>
+</html>
+
+
+
+
